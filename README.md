@@ -5,25 +5,12 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
 ### Run your unit tests
 ```
 npm run test:unit
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+HelloWorld component should accept `abc` class when it passed as the example shows.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+But since the vue-test-utils does not copy abstract property, the `this.$parnet` from HelloWorld component will treat Transition component instance as it's parent instance，so `this.$parnet.hClass` will be `undefined`, which is unexpected.
+
